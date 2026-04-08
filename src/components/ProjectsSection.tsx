@@ -17,28 +17,28 @@ const projects: Project[] = [
   {
     title: "Gran Duque",
     category: "Edição Profissional",
-    video: "/videos/granduque.mp4", 
+    video: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/granduque.mp4`, 
     color: "bg-primary",
     link: "https://www.instagram.com/granduque.barbearia/",
   },
   {
     title: "Pastordinoildo",
     category: "Correção de Cor",
-    video: "/videos/pastordinoildo.mp4", 
+    video: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/pastordinoildo.mp4`, 
     color: "bg-accent",
     link: "https://www.instagram.com/pastordinoildo/",
   },
   {
     title: "wanderley_costaoficial",
     category: "Pós-Produção Social",
-    video: "/videos/wanderley_costaoficial.mp4", 
+    video: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/wanderley_costaoficial.mp4`, 
     color: "bg-primary",
     link: "https://www.instagram.com/wanderley_costaoficial/",
   },
   {
     title: "wesleycarvalho_b",
     category: "Audiovisual Dinâmico",
-    video: "/videos/wesleycarvalho_b.mp4",
+    video: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/wesleycarvalho_b.mp4`,
     color: "bg-accent",
     link: "https://www.instagram.com/wesleycarvalho_b/",
   }
