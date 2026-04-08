@@ -105,7 +105,7 @@ const aiAestheticEnhancerFlow = ai.defineFlow(
       }
       outputMediaUri = output.media.url;
     } else if (input.mediaType.startsWith('video_')) {
-      let promptParts: (string | MediaPart)[];
+      let promptParts: any[];
       let config: Record<string, any> = {
         durationSeconds: 6, // Configurado para 6 segundos conforme solicitado
         aspectRatio: '16:9',
