@@ -60,7 +60,7 @@ export function HeroSection() {
             <video
               ref={videoRef}
               className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${isPlaying ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'}`}
-              src="/videos/hero-reel.mp4"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/hero-reel.mp4`}
               loop
               playsInline
               preload="metadata"
