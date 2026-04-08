@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Abstract experimental digital art",
+      "imageUrl": "https://picsum.photos/seed/pedro1/1920/1080",
+      "imageHint": "abstract experimental art"
+    },
+    {
+      "id": "project-1",
+      "description": "Glitch art portrait",
+      "imageUrl": "https://picsum.photos/seed/pedro2/800/600",
+      "imageHint": "glitch art"
+    },
+    {
+      "id": "project-2",
+      "description": "Zine style collage",
+      "imageUrl": "https://picsum.photos/seed/pedro3/800/600",
+      "imageHint": "zine collage"
+    },
+    {
+      "id": "project-3",
+      "description": "Neon geometric structures",
+      "imageUrl": "https://picsum.photos/seed/pedro4/800/600",
+      "imageHint": "neon geometric"
+    },
+    {
+      "id": "about-me",
+      "description": "Artistic portrait of the artist",
+      "imageUrl": "/images/about-me.png",
+      "imageHint": "artistic portrait"
+    }
+  ]
+}

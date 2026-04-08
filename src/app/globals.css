@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 315 20% 10%;
+    --foreground: 0 0% 98%;
+    --card: 315 20% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 315 20% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 315 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 315 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 315 10% 25%;
+    --muted-foreground: 315 10% 70%;
+    --accent: 285 80% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 315 20% 25%;
+    --input: 315 20% 25%;
+    --ring: 315 90% 60%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-primary selection:text-primary-foreground;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-feature-settings: "salt" on, "ss01" on;
+  }
+}
+
+@layer utilities {
+  .text-glitch {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .text-glitch::before,
+  .text-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+  }
+
+  .text-glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+
+  .text-glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.85deg); }
+    5% { clip: rect(70px, 9999px, 71px, 0); transform: skew(0.85deg); }
+    10% { clip: rect(29px, 9999px, 83px, 0); transform: skew(0.15deg); }
+    15% { clip: rect(16px, 9999px, 91px, 0); transform: skew(0.3deg); }
+    20% { clip: rect(2px, 9999px, 23px, 0); transform: skew(0.95deg); }
+    25% { clip: rect(65px, 9999px, 81px, 0); transform: skew(0.55deg); }
+    30% { clip: rect(30px, 9999px, 41px, 0); transform: skew(0.4deg); }
+    35% { clip: rect(81px, 9999px, 63px, 0); transform: skew(0.4deg); }
+    40% { clip: rect(47px, 9999px, 4px, 0); transform: skew(0.55deg); }
+    45% { clip: rect(51px, 9999px, 42px, 0); transform: skew(0.5deg); }
+    50% { clip: rect(27px, 9999px, 64px, 0); transform: skew(0.3deg); }
+    55% { clip: rect(75px, 9999px, 89px, 0); transform: skew(0.05deg); }
+    60% { clip: rect(48px, 9999px, 100px, 0); transform: skew(0.2deg); }
+    65% { clip: rect(41px, 9999px, 66px, 0); transform: skew(0.95deg); }
+    70% { clip: rect(56px, 9999px, 100px, 0); transform: skew(0.85deg); }
+    75% { clip: rect(50px, 9999px, 1px, 0); transform: skew(0.6deg); }
+    80% { clip: rect(87px, 9999px, 57px, 0); transform: skew(0.55deg); }
+    85% { clip: rect(61px, 9999px, 85px, 0); transform: skew(0.35deg); }
+    90% { clip: rect(40px, 9999px, 20px, 0); transform: skew(0.85deg); }
+    95% { clip: rect(5px, 9999px, 12px, 0); transform: skew(0.35deg); }
+    100% { clip: rect(8px, 9999px, 48px, 0); transform: skew(0.1deg); }
+  }
+
+  @keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(0.1deg); }
+    20% { clip: rect(2px, 9999px, 23px, 0); transform: skew(0.95deg); }
+    40% { clip: rect(47px, 9999px, 4px, 0); transform: skew(0.55deg); }
+    60% { clip: rect(48px, 9999px, 100px, 0); transform: skew(0.2deg); }
+    80% { clip: rect(87px, 9999px, 57px, 0); transform: skew(0.55deg); }
+    100% { clip: rect(8px, 9999px, 48px, 0); transform: skew(0.1deg); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 12px hsl(var(--primary) / 0.4);
+    }
+    50% {
+      text-shadow: 0 0 25px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  .animate-glow-subtle {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .grain-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Hover Effects Standardized for clipping */
+  .silver-shine-hover, .tiktok-hover, .vintage-hover {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, white, white);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-size: 200% auto;
+    display: inline;
+  }
+
+  .silver-shine-hover:hover {
+    background-image: linear-gradient(90deg, #9ca3af 0%, #ffffff 50%, #9ca3af 100%);
+    animation: silver-shine 4s linear infinite;
+  }
+
+  .tiktok-hover:hover {
+    background-image: linear-gradient(
+      calc(90deg + var(--mouse-angle, 0deg)), 
+      rgba(105, 201, 208, 0.8) 0%, 
+      rgba(255, 255, 255, 1) 50%, 
+      rgba(238, 29, 82, 0.8) 100%
+    );
+    background-size: 300% 100%;
+    background-position: var(--mouse-x, 50%) center;
+    filter: saturate(0.8) brightness(1.2) drop-shadow(0 0 2px rgba(255,255,255,0.3));
+  }
+
+  .vintage-hover:hover {
+    background-image: linear-gradient(
+      90deg, 
+      #3d2b1f 0%, 
+      #8d6e63 30%, 
+      #d7ccc8 50%, 
+      #8d6e63 70%, 
+      #3d2b1f 100%
+    );
+    background-size: 200% auto;
+    animation: silver-shine 6s linear infinite;
+    filter: contrast(1.1) sepia(0.3);
+  }
+
+  @keyframes silver-shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+.perspective-text {
+  perspective: 1000px;
+}
+
+.neon-border {
+  box-shadow: 0 0 10px theme('colors.primary.DEFAULT'),
+              0 0 20px theme('colors.primary.DEFAULT');
+}
+
+.zine-shadow {
+  filter: drop-shadow(4px 4px 0px theme('colors.primary.DEFAULT'));
+}
