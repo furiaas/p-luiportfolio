@@ -27,7 +27,7 @@ export function AboutSection() {
         <div className="relative order-2 lg:order-1">
           <div className="relative z-10 p-4 bg-primary/10 border border-primary/40 rotate-2 translate-x-4 translate-y-4">
              <Image 
-              src="/images/about-me.png" 
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/about-me.png`} 
               alt="Pedro Luigi Portrait" 
               width={600} 
               height={800}
