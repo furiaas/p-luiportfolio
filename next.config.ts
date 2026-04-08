@@ -1,35 +1,23 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from "next";
+
+const repo = "p-luiportfolio"; // ⚠️ coloque aqui o NOME DO SEU REPOSITÓRIO
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
+
+  images: {
+    unoptimized: true,
+  },
+
   typescript: {
     ignoreBuildErrors: true,
   },
+
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  images: {
-    unoptimized: true, // Necessário para hospedagens estáticas como GitHub Pages
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-    ],
   },
 };
 
