@@ -2,10 +2,13 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
-export const metadata: Metadata = {
-  title: "Pedro's Pulse | Digital Portfolio",
-  description: 'An immersive, artistic digital portfolio by Pedro Luigi',
-};
+export const metadata = {
+  title: "PLPortfolio",
+  description: "Portfólio do Editor de Vídeos Pedro Luigi, O MEU portfólio",
+  icons: {
+    icon: "/favicon.ico",
+  },
+}
 
 export default function RootLayout({
   children,
