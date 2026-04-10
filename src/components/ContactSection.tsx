@@ -107,7 +107,7 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="bg-white/5 border-2 border-primary/20 p-8 md:p-12 zine-shadow relative">
+          <div className="bg-white/5 border-2 border-primary/20 p-8 md:p-12 relative">
             <div className="space-y-8">
               <div className="inline-block px-3 py-1 bg-primary text-white text-[10px] font-black uppercase tracking-[0.3em]">
                 Manifesto
