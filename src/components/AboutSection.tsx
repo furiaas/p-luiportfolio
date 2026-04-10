@@ -75,12 +75,12 @@ export function AboutSection() {
               </ul>
             </div>
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.4em] mb-4 text-accent">Vibe</h4>
+              <h4 className="text-xs font-black uppercase tracking-[0.4em] mb-4 text-accent">Skills</h4>
               <ul className="text-sm font-medium space-y-2 uppercase">
-                <li>/ Aesthetic</li>
-                <li>/ Professional</li>
-                <li>/ Dynamic Editing</li>
-                <li>/ Transparent Communication</li>
+                <li>/ Adobe Premiere Pro</li>
+                <li>/ Adobe After Effects</li>
+                <li>/ Capcut</li>
+                <li>/ Canva</li>
               </ul>
             </div>
           </div>
