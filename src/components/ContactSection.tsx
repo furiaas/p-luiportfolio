@@ -28,7 +28,7 @@ export function ContactSection() {
     },
     { 
       Icon: WhatsAppIcon, 
-      href: "https://wa.link/i52gv7", 
+      href: "https://wa.link/6bmvde", 
       name: "WhatsApp" 
     },
     { 
